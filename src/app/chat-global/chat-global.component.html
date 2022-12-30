@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="card  my-3" style="height: 800px;">
+        <h3 class="card-header text-white bg-primary">Chat global</h3>      
+        <ul class="list-group list-group-flush overflow-auto">
+          <li *ngFor="let mensaje of this.chat.chat"  class="list-group-item my-1">{{mensaje.text}}</li>   
+        </ul>        
+      </div>
+      
+    <form action="">
+        <div class="input-group mb-3 ">        
+            <input [(ngModel)]="inputMensaje"  name="inputMensaje"  type="text" class="form-control" placeholder="Mensaje" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-primary" (click)="mandarMensaje()"  type="button" id="button-addon2">Enviar</button> 
+        </div>
+    </form>
+    
+</div>

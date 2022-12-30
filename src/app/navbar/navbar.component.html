@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="/" routerLinkActive="active">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavColor01" aria-controls="navbarNavColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavColor01" >
+              <ul class="navbar-nav">       
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/task" routerLinkActive="active">Task</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/private-task" routerLinkActive="active">Private </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/private-task" routerLinkActive="active">Amigos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/chat-global" routerLinkActive="active">Chat Global</a>
+                </li>
+                
+              </ul>
+              <ul class="navbar-nav ml-auto">       
+                  <ng-container *ngIf="!validar; else desconec">
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/registro" routerLinkActive="active">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/log" routerLinkActive="active">Iniciar </a>
+                    </li>
+                  </ng-container>
+                  <ng-template #desconec>
+                    <li class="nav-item">
+                      <a class="nav-link" (click)="desconectar()">Desconectar</a>
+                    </li>
+                  </ng-template>
+              </ul>
+            </div>
+          </div>
+    </div>
+</nav>
+
+
