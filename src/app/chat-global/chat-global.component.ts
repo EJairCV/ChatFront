@@ -11,10 +11,12 @@ export class ChatGlobalComponent implements OnInit {
 
   inputMensaje:string="";
 
+  nombre:any;
+
   constructor(public chat:ChatService) { }
 
   ngOnInit(): void {
-
+    this.nombre=localStorage.getItem("name");
     
   }
 
@@ -22,7 +24,8 @@ export class ChatGlobalComponent implements OnInit {
     console.log(this.inputMensaje)
 
     let mensaje={
-      text:this.inputMensaje
+      text:this.inputMensaje,
+      name:this.nombre
     };
 
     this.chat.mandarMensaje(mensaje);

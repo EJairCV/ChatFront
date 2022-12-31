@@ -27,6 +27,7 @@ export class LogComponent implements OnInit {
         console.log(res)
         this.token=res;
         localStorage.setItem("token",this.token.token)
+        localStorage.setItem("name",this.token.name)
         this.router.navigate(["/private-task"])
       },
       err=>{

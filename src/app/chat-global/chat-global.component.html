@@ -4,7 +4,11 @@
     <div class="card  my-3" style="height: 800px;">
         <h3 class="card-header text-white bg-primary">Chat global</h3>      
         <ul class="list-group list-group-flush overflow-auto">
-          <li *ngFor="let mensaje of this.chat.chat"  class="list-group-item my-1">{{mensaje.text}}</li>   
+          <li *ngFor="let mensaje of this.chat.chat"  class="list-group-item my-1">
+            {{mensaje.name}}: 
+            {{mensaje.text}}
+          
+          </li>   
         </ul>        
       </div>
       

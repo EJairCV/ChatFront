@@ -11,6 +11,7 @@ export class RegistroComponent implements OnInit {
 
   constructor(private auth:AuthService, private router:Router) { }
   user ={
+    name:"",
     email:"",
     password:""
   }
@@ -23,10 +24,10 @@ export class RegistroComponent implements OnInit {
 
     this.auth.registrarse(this.user).subscribe(
       res=>{
-        
         this.token=res;
-        localStorage.setItem("token",this.token.token)
-        this.router.navigate(["/private-task"])
+        localStorage.setItem("token",this.token.token);
+        localStorage.setItem("name",this.token.name);
+        this.router.navigate(["/private-task"]);
       },
       err=>{
         console.log(err)

@@ -6,7 +6,7 @@ import { SocketService } from './socket.service';
 })
 export class ChatService {
 
-  chat:Array<{text:string}>=[]
+  chat:Array<{text:string,name:String}>=[]
 
   constructor(private socket:SocketService) {
     this.recibirMensaje();
